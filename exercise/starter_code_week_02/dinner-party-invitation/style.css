@@ -1,0 +1,30 @@
+/* If we have multiple tag, the most recent one will be show on the production */
+
+body{
+    background-color: blanchedalmond;
+}
+ 
+p{
+    color: rebeccapurple;
+}
+
+.wrapper li{
+    color: orange;
+}
+
+/* .wrapper > p will apply the style of p just in the .wrapper when we have > note: even another text types too h1-h6 */
+.wrapper > p{
+    color: blue;
+}
+
+h2:hover{
+    color: red;
+}
+
+.wrapper a{
+    color: yellow;
+}
+
+.wrapper a:hover{
+    color: blue;
+}

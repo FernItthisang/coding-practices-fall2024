@@ -1,0 +1,58 @@
+/* Webpage Layout */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body{
+height: 100%;
+}
+
+body{
+    font-family: "Gill Sans", sans-serif;
+    min-height: 100vh;
+    background-color: #d5f2ff;
+}
+
+main, 
+header, 
+footer {
+    padding: 20px;
+    border: 1px solid #d3d3d3;
+    color:#333;
+}
+
+header,
+footer {
+height: 20vh;
+}
+
+main {
+height: 60vh;
+}
+
+/* Invaitation Layout */
+.invite-layout{
+    padding: 20px;
+}
+
+.section{
+    padding-bottom: 30px;
+}
+
+.light{
+    color: cornflowerblue;
+}
+
+.dark{
+    color: rgb(28, 60, 121);
+}
+
+.small{
+    font-size: 12px;
+}
+
+.big{
+    font-size: 24px;
+}
