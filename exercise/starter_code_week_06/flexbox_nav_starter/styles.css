@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, 
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    height: 60px;
+}
+
+ul.flex-container {
+    display: flex;
+    line-height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    list-style-type: none;
+    background-color: tomato;
+    /* list-style-type: none; for hide the bullet of the */
+    /* for the heigh we can use the line height */
+}
+
+li{
+    width: 100%;
+}
+
+a {
+    /* These are the children elements */
+    color:white;
+    text-decoration: none;
+}

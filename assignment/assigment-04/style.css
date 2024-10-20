@@ -1,0 +1,173 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: #f1f1f1;
+    color: #2c3e50;
+    max-width: 1200px;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-bottom: solid 0.1em #3d3d3d;
+  }
+  
+  header h1 {
+    font-family: 'Roboto', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+  
+  header h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #eeb310;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 1em;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+  }
+  
+  .section-title {
+    font-family: 'Roboto', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #3d3d3d;
+    margin-bottom: 15px;
+  }
+  
+  .section-content {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #2c3e50;
+    letter-spacing: 0.01em;
+    margin-bottom: 20px;
+  }
+  
+  strong {
+    color: #e74c3c;
+    font-weight: 700;
+  }
+  
+  em {
+    font-style: italic;
+    color: #e74c3c;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+  
+  footer p {
+    font-size: 0.875em;
+  }
+  
+  footer a {
+    color: #2980b9;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    
+    header h3 {
+      font-size: 1rem;
+    }
+  
+    section .section-title {
+      font-size: 1.8rem;
+    }
+  
+    section .section-content {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Webfont Implementation */
+  @font-face {
+    font-family: 'Jersey 20';
+    src: url('fonts/jersey20.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Jersey 20', sans-serif;
+  } 
+  
+  /* Additional Styling for Conceptual Grouping */
+  .section-intro {
+    padding: 2em;
+    margin-bottom: 2em;
+    border-left: 4px solid #3a3a3a;
+  }
+  
+  .section-intro h2 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  /* Whitespace and Grouping */
+  main > *:not(:last-child) {
+    margin-bottom: 2em;
+  }
+  
+  /* Improved Contrast */
+  .section-content p {
+    line-height: 1.8;
+  }
+  
+  .section-title {
+    color: #222;
+  } 
+  
+  /* Links Styling */
+  a {
+    color: #007acc;
+    text-decoration: underline;
+  }
+  
+  a:hover {
+    color: #005a99;
+    text-decoration: none;
+  }  
