@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  
+  .form {
+    background-color: #f15b31;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+  }
+  
+  input[type="text"] {
+    width: 50%;
+    min-width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+    color: #141414;
+  }
+  
+  .results-container {
+    padding: 1.68em;
+  }
+  
+  li {
+    list-style-type: none;
+    line-height: 1.68;
+    text-transform: capitalize;
+  }
+  
+  .result-item {
+    color: tomato;
+  }
+  

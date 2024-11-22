@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  line-height: 1.68;
+}
+
+.column {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+h1 {
+  font-family: "Libre Baskerville", serif;
+  text-transform: capitalize;
+  font-size: 3.68em;
+  line-height: 1.4em;
+}
+
+.pullquote {
+  color: #d3d3d3;
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+  letter-spacing: 1px;
+  font-size: 1.68em;
+}
+
+.en:hover,
+.pt:hover {
+  color: #0dff35;
+}

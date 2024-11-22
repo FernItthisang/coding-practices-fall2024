@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+height: 100%;
+}
+
+body {
+font-family: Helvetica, sans-serif;
+font-size: 1.2em;
+/* color: #f2f2f2; */
+}
+
+.list {
+  height: 90vh;
+  /* display: grid; */
+}
+
+img {
+width: 200px;
+}
+
+.card {
+border: 1px solid green;
+padding: 10px;
+margin: 5px;
+width: 30%;
+}
