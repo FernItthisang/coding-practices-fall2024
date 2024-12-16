@@ -29,22 +29,58 @@ const people = [
     { name: "zack" }
 ];
 
-
-// To put th name to the html dynamically
-
-// 1. get the container element
+// 1. Get the container element
 const container = document.querySelector('.container');
-console.log(container)
-// 2. iterate over the people array
+console.log(container);
+
+// 2. Iterate over the people array
 people.forEach(person => {
-    console.log (person)
-    // 3. for every element in the people array, create the new listItem
+    console.log(person);
+    // 3. Create a new list item for each person
     const listItem = document.createElement('li');
-    // 4. add the name of listitem to the listItem 
+    // 4. Add the name to the list item
     listItem.textContent = person.name;
-    // 5. append the listItem to the container
-    container.appendChild(listItem)
+    // 5. Append the list item to the container
+    container.appendChild(listItem);
+});
 
-})
+// Search functionality
+const searchBar = document.querySelector('.input');
 
+// Clear the list of displayed names
+const clearList = () => {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+};
 
+// Display filtered results
+const displayFiltered = (filteredNames) => {
+    console.log(filteredNames);
+    // Clear the container
+    clearList();
+
+    filteredNames.forEach(person => {
+        // Create a new list item
+        const listItem = document.createElement('li');
+        // Add text content to the list item
+        listItem.textContent = person.name;
+        // Append the list item to the container
+        container.appendChild(listItem);
+    });
+};
+
+// Search function
+const searchName = (event) => {
+    const searchString = event.target.value.toLowerCase();
+    console.log('Search String:', searchString);
+
+    const filteredPeople = people.filter(person => {
+        return person.name.toLowerCase().includes(searchString);
+    });
+    console.log('Filtered People:', filteredPeople);
+    displayFiltered(filteredPeople);
+};
+
+// Add event listener for the search bar
+searchBar.addEventListener('keyup', searchName);

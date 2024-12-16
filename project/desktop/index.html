@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Documenting Global Protest Symbols</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        /* Style the container */
+        .container {
+            text-align: center;
+        }
+
+        /* Style the image button */
+        .image-button {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: none;
+        }
+
+        .image-button img {
+            width: 200px; /* Adjust size as needed */
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .image-button img:hover {
+            transform: scale(1.1); /* Add a hover effect */
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <button class="image-button" onclick="window.location.href='1.html'">
+            <img src="asset/folder.svg" alt="Navigate to 1.html">
+            <p>Documenting Global Protest Symbol</p>
+        </button>
+    </div>
 </body>
 </html>
