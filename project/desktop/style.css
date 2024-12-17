@@ -1,242 +1,187 @@
-body {
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('asset/bg.png'); /* Relative path */
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('asset/bg.png'); /* Replace with your background image */
     background-size: cover;
     background-position: center;
-    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+h2, h3 {
+    margin: 0;
 }
 
 h2{
-    margin: 0;
+    font-size: 24px;
 }
-
+/* Container Layout */
 .container {
-    height: 800px;
-    margin: 40px;
     display: flex;
     flex-direction: row;
+    height: 90vh;
+    margin: 40px;
     border-radius: 20px;
-    overflow: none; /* Make sure modal content is scrollable */
-
-}
-#window{
-    overflow: auto;
+    overflow: hidden;
+    background-color: #FDFDFD;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Sidebar Styles */
 .sidebar {
-    width: 164px;
+    width: 220px;
+    background-color: #D4DFE2;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    background-color: #D4DFE2;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+   
 }
+
 .sidebar h3 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
+
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
+
 .sidebar li {
-    margin: 5px 0;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    opacity: 0.8;
 }
 
 #topleft {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 48px;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
 }
+
 #topleft li {
-    float: left;
     width: 15px;
     height: 15px;
-    margin: 0 15px 15px 0;
-    border-radius: 30px;
-    gap: 4px;
-  }
-#red {
-    background-color: #FF5F57;
-    border: 1px solid #E04138;
+    border-radius: 50%;
 }
 
-#yellow {
-    background: #FEBC2E;
-    border: 1px solid #E09E23;
+#red { background-color: #FF5F57; border: 1px solid #E04138; }
+#yellow { background-color: #FEBC2E; border: 1px solid #E09E23; }
+#green { background-color: #29C940; border: 1px solid #3DAE40; }
+
+#bar {
+    margin-top: 20px;
+    overflow-y: scroll;
 }
 
-#green {
-    background: #29C940;
-    border: 1px solid #3DAE40;
-}
-
+/* Content Section */
 .content {
-    width: 1200px;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
     display: flex;
     flex-direction: column;
     background-color: #FDFDFD;
-    margin: 0;
-    padding: 0;
 }
 
-#topright{
-    width: auto;
-    height: 48px;
-    margin: 0;
-    padding: 0;
-    float: left;
+#topright {
     background-color: #F4F4F4;
-    padding: 20px 20px 0px 20px;
+    padding: 20px;
+    border-bottom: 1px solid #E0E0E0;
+    text-align: left;
+    font-size: 1.5rem;
 }
 
-.year {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
+#window {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    overflow: hidden;
+}
+
+.folders {
+    width: 100%;
+    padding: 20px;
+    background-color: #F9F9F9;
+    border-right: 1px solid #E0E0E0;
+    overflow-y: auto;
 }
 
 .folder-group {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 20px;
 }
 
-.folders {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.folder{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+.folder {
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .folder img {
     width: 60px;
+    margin-bottom: 5px;
 }
 
-
-.tag-circle:nth-child(1) { left: 0; z-index: 3; }
-.tag-circle:nth-child(2) { left: 8px; z-index: 2; }
-.tag-circle:nth-child(3) { left: 16px; z-index: 1; }
-
-/* Header for Folder Name and Arrow */
-/* Modal Background */
-/* Modal Background */
-.modal {
-    position: absolute; /* Align within the content */
-    top: 50;
-    left: 218px; /* Shift modal right by the width of the sidebar */
-    width: 1200px; /* Set width similar to the right container */
-    height: 800px;
-    display: none;
-    justify-content: flex-start;
-    align-items: flex-start; /* Align modal content to the top */
-    z-index: 1000; /* Ensure modal is on top of other elements */
-    overflow: auto; /* Make sure modal content is scrollable */
-    margin: 40px;
-    border-radius: 0px 20px 20px 0px;
+.folder p {
+    font-size: 14px;
 }
 
-/* Modal Content */
-.modal-content {
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    position: relative;
-    border-radius: 0px 20px 20px 0px;
-
-}
-
-/* Header for Folder Name and Arrow */
-.modal-header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    background-color: #F4F4F4;
-    color: black;
-    padding: 10px 60px;
-    border-radius: 10px 10px 0 0;
-    z-index: 1000;
-}
-
-/* Folder Name */
-.folder-name {
-    font-size: 28px;
-    font-weight: bold;
-    margin-left: 10px; /* Align to the left with some space */
-    flex-grow: 1;
-}
-
-/* Back Arrow */
-.exit-arrow {
-    cursor: pointer;
-    font-size: 30px;
-    padding: 10px;
-    position: absolute;
-    left: 10px; /* Position left arrow inside the header */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Image Gallery */
-.image-gallery {
+/* Main Content Area */
+#main-content {
+    flex: 1;
     padding: 20px;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+}
+
+#main-content h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
-    margin-top: 20px; /* Space below the header */
 }
 
-/* Image Item */
 .image-item {
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f0f0f0;
     padding: 10px;
 }
 
-/* Image Inside Each Item */
 .image-item img {
     width: 100%;
     height: 150px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
 }
 
-/* Text Under Each Image */
 .image-item p {
-    margin: 5px 0;
+    margin-top: 5px;
     font-size: 14px;
-    color: #333;
-    text-align: center;
+    color: #555;
 }
 
-/* Tag Circle (for images) */
 .image-tags {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    gap: 5px;
 }
 
 .tag-circle {
@@ -244,9 +189,305 @@ h2{
     height: 15px;
     border-radius: 50%;
     display: inline-block;
-    margin-right: 5px;
+    cursor: pointer;
 }
 
 .tag-circle:hover {
     opacity: 0.8;
+}
+
+/* Tags List */
+.tag-item {
+    width: 100%;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    max-width: 180px;
+    cursor: pointer;
+}
+
+.tag-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.tag-text {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.active-tab {
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+
+}
+
+
+#image-details {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.image-preview img {
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.image-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#image-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.image-detail-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: none;
+}
+
+.image-detail {
+    display: flex;
+    gap: 20px;
+}
+
+.image-detail img {
+    flex: 1;
+    max-width: 60%;
+}
+
+.image-metadata {
+    flex: 1;
+}
+
+.bottom-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.image-item {
+    cursor: pointer;
+    text-align: center;
+}
+/* Image Gallery Container */
+/* Main Container */
+.image-detail-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Full height of the parent container */
+    box-sizing: border-box;
+    gap: 10px; /* Spacing between sections */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Image and Metadata Section */
+.image-detail {
+    display: flex;
+    flex: 1; /* Take up remaining space */
+    gap: 20px; /* Spacing between image and metadata */
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-detail img {
+    flex: 2; /* Image takes 2 parts of the available space */
+    height: 100%; /* Ensure it fits the container */
+    width: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 8px;
+}
+
+.image-metadata {
+    flex: 1; /* Metadata takes 1 part of the available space */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto; /* Allow content to scroll if too long */
+}
+
+/* Other Images Section */
+.bottom-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    flex-shrink: 0; /* Prevent shrinking */
+    overflow-x: auto; /* Horizontal scrolling for images */
+    padding: 10px 0;
+}
+.image-item2 {
+    flex: 0 0 100px; /* Fixed width and height for the container */
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+    border-radius: 8px;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.image-item2 img {
+    width: auto; /* Keep original width */
+    height: auto; /* Keep original height */
+    max-width: 100%; /* Limit to container's width */
+    max-height: 100%; /* Limit to container's height */
+    object-fit: scale-down; /* Scale image down to fit without cropping */
+}
+
+/* Optional: Hide scrollbar styling */
+.image-gallery2::-webkit-scrollbar {
+    height: 8px;
+}
+
+.image-gallery2::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.image-gallery2::-webkit-scrollbar-track {
+    background: transparent;
+}
+.favorite-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    padding: 8px;
+    max-width: 180px; /* Set a fixed or constrained width */
+    overflow: hidden; /* Hide overflowing content */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add dots for overflowed text */
+}
+
+.favorite-item img {
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+    width: 15px;
+    height: 15px;
+}
+
+.favorite-item span {
+    flex: 1; /* Allow the text to fill available space */
+    overflow: hidden; /* Clip overflowed text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Show "..." for overflowed text */
+}
+/* Year Container */
+.year-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Year Header */
+.year-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+/* Divider Between Years */
+.year-divider {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 15px 0;
+}
+
+/* Folders Row */
+.folders-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow folders to wrap */
+    gap: 15px; /* Space between folders */
+    align-items: flex-start; /* Align folders at the top */
+}
+
+/* Individual Folder */
+.folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content at the top */
+    width: 120px; /* Fixed width */
+    text-align: center;
+    cursor: pointer;
+}
+
+.folder img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.folder p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    display: -webkit-box; /* Enable line clamping */
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical; /* Vertical text layout */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis at overflow */
+    max-height: 3em; /* Approx 2 lines */
+    line-height: 1.5em;
+}
+/* SVG Button */
+.svg-button {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    height: 24px;
+    cursor: pointer;
+}
+
+.button-icon {
+    width: 100%; /* Make the icon fill the button */
+    height: 100%;
+    object-fit: contain; /* Maintain proportions */
+}
+.back-button {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Optional: Add pointer on hover */
+    display: inline-block;
+}
+
+.back-button img {
+    display: block; /* Prevent unwanted spacing */
 }

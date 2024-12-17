@@ -7,50 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
     <div class="container">
-        
+        <!-- Sidebar -->
         <div class="sidebar">
-        <ul id="topleft">
-                <li id="red"></li>
-                <li id="yellow"></li>
-                <li id="green"></li>
+            <ul id="topleft">
+                <li id="red" onclick="window.location.href='index.html'"></li>
+                <li id="yellow" onclick="window.location.href='index.html'"></li>
+                <li id="green" onclick="window.location.href='index.html'"></li>
             </ul>
-        <div id="bar">
-            <h3>Favorites</h3>
-            <ul id="favorites">
-                  <!-- Dynamic folder will be inserted here -->
-                  <button id="project-info-btn" onclick="openProjectInformation()">
-                    <img src="path-to-your-image.png" alt="Project Info" style="width: 50px; height: 50px;"/>
-                </button>
-                
-            </ul>
-            
-
-            <h3>Tags</h3>
-            <ul id="tags">
-                <!-- Dynamic tags will be inserted here -->
-            </ul>
-        </div>
-        </div>
-
-        <div class="content">
-        <div id="topright">
-            <h2>Documenting Global Protest Symbols</h2>
-        </div>
-        <div id="window">
-            <div class="folders" id="folders">
-                <div class="year"></div>
-                <div class="folder-group">
-                    <div class="folder"></div>
-                </div>
-                <!-- Dynamic folders will be inserted here -->
-        </div>
+            <div id="bar">
+                <h3>Favorites</h3>
+                <ul id="favorites"></ul>
+                <h3>Tags</h3>
+                <ul id="tags"></ul>
+            </div>
         </div>
         
+        <!-- Content -->
+        <div class="content">
+            <div id="topright">
+                <h2>Documenting Global Protest Symbols</h2>
+            </div>
+            <div id="window">
+                <div id="folders" class="folders"></div>
+                <div id="main-content" style="display: none;"></div>
+                <div id="main-content2" style="display: none;"></div>
+
+            </div>
         </div>
-</div>
- 
-    <script src="main4.js"></script>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
